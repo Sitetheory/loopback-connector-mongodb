@@ -22,7 +22,7 @@ This module adopts the [Module Long Term Support (LTS)](http://github.com/CloudN
 
 | Version    | Status               | Published | EOL                  | LoopBack | Juggler  |
 | ---------- | -------------------- | --------- | -------------------- | ---------|----------|
-| 6.x        | Current              | Mar 2021  | Apr 2023 _(minimum)_ | 4        | 4.x      |
+| 6.x        | Current              | Mar 2021  | Apr 2025 _(minimum)_ | 4        | 4.x      |
 | 5.x        | Active LTS           | Jun 2019  | Apr 2023             | 3, 4     | 3.x, 4.x |
 | 4.x        | Maintenance LTS      | Nov 2018  | Apr 2021             | 3, 4     | 3.x, 4.x |
 
@@ -133,6 +133,26 @@ const config = {
 ```
 
 Note: the port is not specified when using the `mongodb+srv` protocol and will be ignored if given.
+
+### TLS/SSL Connections
+
+Note: SSL options deprecated since MongoDB 4.2
+
+```ts
+const config = {
+  name: 'db',
+  connector: 'mongodb',
+  url: '',
+  host: 'localhost',
+  port: 27017,
+  user: '',
+  password: '',
+  database: 'testdb',
+  tls: true,
+  tlsCertificateKeyFile: '/local/path/to/pem-file',
+  tlsCAFile: '/local/path/to/ca-file',
+};
+```
 
 ## Security Considerations
 
